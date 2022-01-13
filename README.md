@@ -10,8 +10,9 @@ python <pngcompress.py文件绝对路径> <文件格式,如:png> <文件夹路�
 
 ## 示例(mac平台)
 
+```python
 python /Users/admin/pngcompress.py png /Users/admin/压缩图文件夹 200 200
-
+```
 
 # 无法执行解决方案
 
