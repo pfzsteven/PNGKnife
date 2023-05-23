@@ -1,28 +1,83 @@
-# PNGKnife
+# Tips
 
-重要声明:该脚本会在原来文件基础上进行覆盖处理，所以要裁剪时，最好是先**备份**原文件夹！！！
+1. It supports to resize and compress all image files in the folder. 
+2. It supports for integration into the unity project.
+3. Advice backup your images directory before executing script.
 
-使用python脚本批量裁剪png图片尺寸大小。使用说明:
+## Usage
 
-```python
-python <pngcompress.py文件绝对路径> <文件格式,如:png> <文件夹路径> <输出宽度> <输出高度>
+### Step 1. Download Script.
+
+Download the `pngcompress.py` file in your location '/Users/Admin/pngcompress.py'(Max OS) or 'C://Users//Admin//pngcompress.py'(Windows OS)
+
+### Step 2. Choose one of the features to execute in your Terminal.
+
+- Scan and print out the image file path that meets the size conditions
+
+```shell
+python3 pngcompress scan <image folder> 
+                         <large than width> <large than height>
 ```
 
-## 示例(mac平台)
+- Resize or Compress the image file, and replace to own path.
 
-```python
-python /Users/admin/pngcompress.py png /Users/admin/压缩图文件夹 200 200
+```shell
+python3 pngcompress <media type> 
+                    <images folder> 
+                    -s <output width> <output height> 
+                    -q <quality> 
+                    -w <larger than width> <larger than height>
+```
+**Args**
+
+- media type :There are 2 Options: (1)Exactly a type: `png` or `jpg` or `tga`; (2)All types: `-a`
+- images folder:Input a directory path. E.g: `/Users/Icons`
+- [Option]-s(Short name of size): Resize the image width and height. Value is range `[1,Int.max]`.
+- [Option]-q(Short name of quality): Compress the image quality. Value is range `[1,100]`
+- [Option]-w(Short name of where): Filter the image width and height to be executed. If not declared, all images will be executed.
+
+#### Features
+
+**1.Scan Only**
+
+```shell
+python3 pngcompress scan 1000 1000
 ```
 
-# 无法执行解决方案
 
-## 解决zsh "pip command not found"
+**2.Resize and Compress Quality**
 
-> chsh -s /bin/bash
+```shell
+python3 pngcompress png /Users/Icons -s 128 128 -q 95 -w 256 256
 
-## 依赖库找不到
+or you want the all images to do
+python3 pngcompress -a /Users/Icons -s 128 128 -q 95
 
-> 目前均在python 3.7环境下开发，如果还是处于2.7的，需要升级下pip。这边不做介绍。
+or you add a size filter.
+python3 pngcompress -a /Users/Icons -s 128 128 -q 95 -w 256 256
+```
 
-先执行命令 `pip3 install image`
-再执行命令 `pip3 install PIL`
+**3.Resize Only**
+
+```shell
+python3 pngcompress png /Users/Icons -s 128 128
+
+or you want the all images to do
+python3 pngcompress -a /Users/Icons -s 128 128
+
+or you add a size filter.
+python3 pngcompress -a /Users/Icons -s 128 128 -w 256 256
+```
+
+**4.Compress Only**
+
+```shell
+python3 pngcompress png /Users/Icons -q 80
+
+or you want the all images to do
+python3 pngcompress -a /Users/Icons -q 80
+
+or you add a size filter.
+python3 pngcompress -a /Users/Icons -q 80 -w 256 256
+```
+
