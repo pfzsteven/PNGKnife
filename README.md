@@ -4,7 +4,7 @@
 2. It supports for integration into the unity project.
 3. Advice backup your images directory before executing script.
 
-## Usage
+## Terminal Usage
 
 ### Step 1. Download Script.
 
@@ -80,4 +80,11 @@ python3 pngcompress -a /Users/Icons -q 80
 or you add a size filter.
 python3 pngcompress -a /Users/Icons -q 80 -w 256 256
 ```
+
+## Unity EidtorWindow Usage
+
+1. Create a directory named like `Python` under the `Assets` folder (`/Assets/Python/`).
+2. Copy the `pngcompress.py` into the `Python` folder.
+3. Copy the C# script into the `Editor` folder.
+4. Opening the EditorWindow in your UnityEditor.
 
