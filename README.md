@@ -85,6 +85,6 @@ python3 pngcompress -a /Users/Icons -q 80 -w 256 256
 
 1. Create a directory named like `Python` under the `Assets` folder (`/Assets/Python/`).
 2. Copy the `pngcompress.py` into the `Python` folder.
-3. Copy the C# script into the `Editor` folder.
+3. Copy the `PngCompress.cs` script into the `Editor` folder.
 4. Opening the EditorWindow in your UnityEditor.
 
