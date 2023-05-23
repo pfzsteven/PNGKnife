@@ -36,7 +36,7 @@ python3 pngcompress <media type>
 - [Option]-q(Short name of quality): Compress the image quality. Value is range `[1,100]`
 - [Option]-w(Short name of where): Filter the image width and height to be executed. If not declared, all images will be executed.
 
-#### Features
+## Features
 
 **1.Scan Only**
 
